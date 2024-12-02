@@ -16,4 +16,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BlogCoreNET.Models\BlogCoreNET.Models.csproj" />
+    <ProjectReference Include="..\BlogCoreNET.Utilities\BlogCoreNET.Utilities.csproj" />
+  </ItemGroup>
+
 </Project>
