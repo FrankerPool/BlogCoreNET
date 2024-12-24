@@ -1,14 +1,15 @@
 ﻿var dataTable;
 $(document).ready(function () {
+    console.log("ready");
     chargeDataTable();
 });
 
 function chargeDataTable() {
-    dataTable = $("#TableCategorys").DataTable({
+    dataTable = $("#TableCategories").DataTable({
         "ajax": {
-            "url": "/admin/categorias/GetAll",
+            "url": "/Admin/Categories/GetAll",
             "type": "GET",
-            "datatype": "json"
+            "datatype": "json",
         },
         "columns": [
             { "data": "id", "width": "5%" },

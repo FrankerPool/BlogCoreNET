@@ -10,6 +10,5 @@ namespace BlogCoreNET.AccessData.Data.Repository.IRepository
     public interface ICategoryRepository : IRepository<Category>
     {
         void update(Category category);
-        //IEnumerable<SelectListItem> GetListCategory();
     }
 }
