@@ -1,0 +1,56 @@
+﻿@model BlogCoreNET.Models.Category
+@{
+	ViewData["Title"] = "Edit Category";
+}
+<br />
+<br />
+<h3 class="text-center">
+	Edit Category
+</h3>
+<form asp-action="Edit" method="POST">
+	<div class="row px-2 offset-1 border">
+		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+		<div class="col-10 offset-1 mt-4">
+			<div class="form-group row">
+				<div class="col-4">
+					<label asp-for="Name"></label>
+				</div>
+				<div class="col-8">
+					<input asp-for="Name" class="form-control" placeholder="Enter Name " />
+					<span asp-validation-for="Name" class="text-danger"></span>
+				</div>
+			</div>
+
+			<br />
+			<br />
+
+			<div class="form-group row">
+				<div class="col-4">
+					<label asp-for="Order"></label>
+				</div>
+				<div class="col-8">
+					<input asp-for="Order" class="form-control" placeholder="Enter Order " />
+					<span asp-validation-for="Order" class="text-danger"></span>
+				</div>
+			</div>
+
+			<br />
+			<br />
+			<div class="form-group row">
+				<div class="col-8">
+					<div class="row">
+						<div class="col">
+							<button type="submit" class="btn btn-primary form-control">Edit Category</button>
+						</div>
+						<br />
+						<div class="col">
+							<a asp-action="Index" class="btn btn-success form-control">Go Back</a>
+						</div>
+						<br />
+						<br />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

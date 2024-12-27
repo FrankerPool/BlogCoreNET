@@ -16,7 +16,7 @@ namespace BlogCoreNET.AccessData.Data.Repository
         {
             _db = db;
         }
-        public void update(Category category)
+        public void Update(Category category)
         {
             var objDb = _db.category.FirstOrDefault(s => s.Id == category.Id);
             objDb.Name = category.Name;

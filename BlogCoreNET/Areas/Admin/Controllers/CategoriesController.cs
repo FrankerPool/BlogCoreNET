@@ -21,7 +21,32 @@ namespace BlogCoreNET.Areas.Admin.Controllers
         public IActionResult Create() {
             return View();
         }
+		[HttpGet]
+		public IActionResult Edit(int Id)
+		{
+            Category category = new Category();
+            category = _contenedorWork.Category.GetValue(Id);
+            if (category == null)
+            {
+                return NotFound();
+            }
+
+			return View(category);
+		}
 		[HttpPost]
+        [ValidateAntiForgeryToken]
+		public IActionResult Edit(Category category)
+		{
+            if (ModelState.IsValid)
+            {
+                _contenedorWork.Category.Update(category);
+                _contenedorWork.Save();
+
+                return RedirectToAction(nameof(Index));
+            }
+            return View(category);
+		}
+        [HttpPost]
         [ValidateAntiForgeryToken]
 		public IActionResult Create(Category category)
 		{
