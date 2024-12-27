@@ -54,3 +54,30 @@ function chargeDataTable() {
         "width": "100%"
     });
 }
+
+function Delete(url) {
+    Swal.fire({
+        title: "You want to delete?",
+        text: "This change is permanent",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, I know",
+        cancelButtonText: "Cancel",
+        allowOutsideClick: false
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                type: 'DELETE',
+                url: url,
+                success: function (data) {
+                    if (data.success) {
+                        toastr.success(data.message);
+                        dataTable.ajax.reload();
+                    } else {
+                        toastr.error(data.message);
+                    }
+                }
+            });
+        }
+    });
+}

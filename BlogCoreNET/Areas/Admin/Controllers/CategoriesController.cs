@@ -1,6 +1,7 @@
 ﻿using BlogCoreNET.AccessData.Data.Repository.IRepository;
 using BlogCoreNET.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 
 namespace BlogCoreNET.Areas.Admin.Controllers
 {
@@ -21,6 +22,24 @@ namespace BlogCoreNET.Areas.Admin.Controllers
         public IActionResult Create() {
             return View();
         }
+		[HttpGet]
+		public IActionResult Delete()
+		{
+			return View();
+		}
+		[HttpDelete]
+        public IActionResult Delete(int Id)
+        {
+			var objcategory = _contenedorWork.Category.GetValue(Id);
+			if (objcategory == null)
+			{
+				return Json(new {success = false, Message = "Delete Error"});
+			}
+			_contenedorWork.Category.Remove(objcategory);
+			_contenedorWork.Save();
+
+			return Json(new { success = true, Message = "Deleted" });
+		}
 		[HttpGet]
 		public IActionResult Edit(int Id)
 		{
