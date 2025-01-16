@@ -15,7 +15,7 @@ function chargeDataTable() {
             //el nombre como tal esta en la base de datos, solo el primero en minuscula despues como este
             { "data": "id", "width": "5%" },
             { "data": "articleName", "width": "20%" },
-            { "data": "articleDescription", "width": "15%" },
+            { "data": "category.name", "width": "15%" },
             { "data": "articleDateCreation", "width": "15%" },
             {
                 "data": "id",

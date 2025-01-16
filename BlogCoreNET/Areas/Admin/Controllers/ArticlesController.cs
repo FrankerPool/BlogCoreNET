@@ -20,7 +20,7 @@ namespace BlogCoreNET.Areas.Admin.Controllers
 		[HttpGet]
 		public IActionResult GetAll()
 		{
-			return Json(new { data = _contenedorWork.Article.GetAll() });
+			return Json(new { data = _contenedorWork.Article.GetAll(includeProperties: "Category") });
 		}
 
 		#endregion
