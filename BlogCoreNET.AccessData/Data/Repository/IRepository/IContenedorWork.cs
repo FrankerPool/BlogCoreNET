@@ -9,6 +9,7 @@ namespace BlogCoreNET.AccessData.Data.Repository.IRepository
     public interface IContenedorWork : IDisposable
     {
         ICategoryRepository Category { get; }
+        IArticleRepository Article { get; }
         void Save();
     }
 }

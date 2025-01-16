@@ -1,5 +1,6 @@
 ﻿using BlogCoreNET.AccessData.Data.Repository.IRepository;
 using BlogCoreNET.Data;
+using BlogCoreNET.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,11 @@ namespace BlogCoreNET.AccessData.Data.Repository
         {
             _db = db;
             Category = new CategoryRepository(_db);
+            Article = new ArticleRepository(_db);
         }
 
         public ICategoryRepository Category {  get; private set; }
+        public IArticleRepository Article { get; private set; }
 
         public void Dispose()
         {
