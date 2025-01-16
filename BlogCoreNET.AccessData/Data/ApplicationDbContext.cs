@@ -10,6 +10,7 @@ namespace BlogCoreNET.Data
             : base(options)
         {
         }
+        public DbSet<Article> Articles { get; set; }
         public DbSet<Category> category { get; set; }
     }
 }
