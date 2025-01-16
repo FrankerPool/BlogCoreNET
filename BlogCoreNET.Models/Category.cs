@@ -15,6 +15,7 @@ namespace BlogCoreNET.Models
         [Display(Name ="Name Category")]
         public string Name { get; set; }
         [Display(Name = "Visual Order")]
+        [Range(1,100, ErrorMessage ="Value is over range")]
         public int? Order { get; set; }
     }
 }
