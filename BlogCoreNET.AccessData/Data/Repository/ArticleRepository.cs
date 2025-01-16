@@ -18,7 +18,7 @@ namespace BlogCoreNET.AccessData.Data.Repository
         }
         public void Update(Article article)
         {
-            var objDb = _db.Articles.FirstOrDefault(s => s.Id == article.Id);
+            var objDb = _db.articles.FirstOrDefault(s => s.Id == article.Id);
             objDb.ArticleName = article.ArticleName;
             objDb.ArticleDescription = article.ArticleDescription;
 			objDb.ArticleURL = article.ArticleURL;
